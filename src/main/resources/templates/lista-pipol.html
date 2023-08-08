@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <h1>Pipoles</h1>
+	<ul th:each="pipol : ${pipols}">
+		<li th:text="${pipol}"> </li>
+	</ul>
+	
+	<form action = "/controllers/imprimir-un-pipol" method = 'POST'>
+		Nombre del sexto pipol<br/>
+		<input type ='text' id = 'nombreSextoPipol' name = 'nombreSextoPipol'/><br/><br/>
+		<input type ='submit' value = 'Imprimir el sexto pipol'/>
+	</form>
+</body>
+</html>
