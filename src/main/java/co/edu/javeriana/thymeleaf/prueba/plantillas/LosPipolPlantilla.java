@@ -3,16 +3,24 @@ package co.edu.javeriana.thymeleaf.prueba.plantillas;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import co.edu.javeriana.thymeleaf.prueba.modelo.Pipol;
+import co.edu.javeriana.thymeleaf.prueba.modelo.PipolRepositroy;
+
 
 @Controller
 @RequestMapping("/plantillas")
 public class LosPipolPlantilla {
+
+
+	@Autowired
+	private PipolRepositroy pipolRepositroy;
 
 	 @GetMapping("/los-pipol-template-model-and-view")
      public ModelAndView losPipolTemplateModelAndView() {
@@ -40,13 +48,13 @@ public class LosPipolPlantilla {
 	 
 	 @GetMapping("/lista-pipol")
 	 public String laListaPipol( Model model ) {
-		 Collection<String> pipols = new ArrayList<String>();
-		 pipols.add("Pablo");
-		 pipols.add("María");
-		 pipols.add("Franciso");
-		 pipols.add("Miguel");
-		 pipols.add("Esther");
-		 
+		//  Collection<String> pipols = new ArrayList<String>();
+		//  pipols.add("Pablo");
+		//  pipols.add("María");
+		//  pipols.add("Franciso");
+		//  pipols.add("Miguel");
+		//  pipols.add("Esther");
+		 Iterable<Pipol> pipols = pipolRepositroy.findAll();
 		 model.addAttribute("pipols", pipols);
 		 return "lista-pipol";
 	 }
