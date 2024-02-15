@@ -8,7 +8,7 @@
 <body>
     <h1>Pipoles</h1>
 	<ul th:each="pipol : ${pipols}">
-		<li th:text="${pipol}"> </li>
+		<li th:text="${pipol.nombre}"> </li>
 	</ul>
 	
 	<form action = "/controllers/imprimir-un-pipol" method = 'POST'>
