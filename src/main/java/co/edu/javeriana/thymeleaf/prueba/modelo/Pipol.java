@@ -1,30 +1,29 @@
 package co.edu.javeriana.thymeleaf.prueba.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 public class Pipol {
 
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 	private String nombre;
 	private String apellido;
 	private String documento;
 	
-	
-	
-	public Pipol(String nombre, String apellido, String documento) {
-		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.documento = documento;
-	}
-	
-	
-	public String getNombre() {
-		return nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public String getDocumento() {
-		return documento;
-	}
 	
 	
 	
