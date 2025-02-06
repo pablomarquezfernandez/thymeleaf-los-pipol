@@ -8,12 +8,17 @@
 <body>
     <h1>Pipoles</h1>
 	<ul th:each="pipol : ${pipols}">
-		<li th:text="${pipol.nombre}"> </li>
+		<li><span th:text="${pipol.nombre}"></span> <span th:text="${pipol.apellido}"></span> </li>
 	</ul>
 	
 	<form action = "/controllers/imprimir-un-pipol" method = 'POST'>
 		Nombre del sexto pipol<br/>
-		<input type ='text' id = 'nombreSextoPipol' name = 'nombreSextoPipol'/><br/><br/>
+		<input type ='text' id = 'nombreSextoPipol' name = 'nombreSextoPipol'/><br/>
+		Apellido del sexto pipol<br/>
+		<input type ='text' id = 'apellidoSextoPipol' name = 'apellidoSextoPipol'/><br/>
+		Documento del sexto pipol<br/>
+		<input type ='text' id = 'documentoSextoPipol' name = 'documentoSextoPipol'/><br/>
+		<br/>
 		<input type ='submit' value = 'Imprimir el sexto pipol'/>
 	</form>
 	
